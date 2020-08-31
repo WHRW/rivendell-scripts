@@ -2,7 +2,7 @@
 
 # pypad_ino713_delay_tcp.py
 #
-# Send Now & Next updates to an Innovonics 713 RDS encoder
+# Send Now & Next updates to an Inovonics 713 RDS encoder as TCP
 #
 #   (C) Copyright 2018 Fred Gleason <fredg@paravelsystems.com>
 #                 2020 Eric Adler <eric@whrwfm.org>
