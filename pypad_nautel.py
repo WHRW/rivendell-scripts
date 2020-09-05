@@ -47,7 +47,7 @@ def getval(section, val, update, section):
 def encode(srcdata, fieldname, update, section):
     if(len(srcdata)!=0):
         enc=fieldname+'='+update.resolvePadFields(update.config().get(section,srcdata),pypad.ESCAPE_NONE)+'\r\n'
-    else
+    else:
         enc=''
     return enc
 
