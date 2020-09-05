@@ -40,19 +40,19 @@ def sendvar(var):
         send_sock.sendall(var.encode('utf-8'))
         send_sock.close()
 
-def getval(section, val):
+def getval(section, val, update):
     configval = update.config().get(section,val)
     return configval
 
-def encode(srcdata, fieldname):
+def encode(srcdata, fieldname, update):
     if(len(srcdata)!=0):
         enc=fieldname+'='+update.resolvePadFields(srcdata),pypad.ESCAPE_NONE)+'\r\n'
     else
         enc=''
     return enc
 
-def getval_encdode(sourcename, fieldname):
-    return encode(getval(sourcename), fieldname)
+def getval_encdode(sourcename, fieldname, update):
+    return encode(getval(sourcename, update), fieldname, update)
 
 def ProcessPad(update):
     n=1
@@ -60,47 +60,47 @@ def ProcessPad(update):
     while(update.config().has_section(section)):
         if update.shouldBeProcessed(section) and update.hasPadType(pypad.TYPE_NOW):
             dps=''
-            dps=getval_encode('DynamicPS')
-            ps=getval_encode('ProgramService')
-            text=getval_encode('RadioText')
-            picode=getval_encode('PICode')
-            pty=getval_encode('ProgramType')
-            ptyn=getval_encode('ProgramTypeName')
-            trp=getval_encode('TrafficProgram')
-            tra=getval_encode('TrafficAnnouncement')
-            af1=getval_encode('AltFreq1')
-            af2=getval_encode('AltFreq2')
-            af3=getval_encode('AltFreq3')
-            af4=getval_encode('AltFreq4')
-            af5=getval_encode('AltFreq5')
-            af6=getval_encode('AltFreq6')
-            af7=getval_encode('AltFreq7')
-            af8=getval_encode('AltFreq8')
-            af9=getval_encode('AltFreq9')
-            af10=getval_encode('AltFreq10')
-            af11=getval_encode('AltFreq11')
-            af12=getval_encode('AltFreq12')
-            af13=getval_encode('AltFreq13')
-            af14=getval_encode('AltFreq14')
-            af15=getval_encode('AltFreq15')
-            af16=getval_encode('AltFreq16')
-            af17=getval_encode('AltFreq17')
-            af18=getval_encode('AltFreq18')
-            af19=getval_encode('AltFreq19')
-            af20=getval_encode('AltFreq20')
-            af21=getval_encode('AltFreq21')
-            af22=getval_encode('AltFreq22')
-            af23=getval_encode('AltFreq23')
-            af24=getval_encode('AltFreq24')
-            af25=getval_encode('AltFreq25')
-            di=getval_encode('DecoderInfo')
-            mus=getval_encode('MusicSpeech')
-            dat=getval_encode('Date')
-            tim=getval_encode('Time')
-            utco=getval_encode('UTCOffset')
-            cont=getval_encode('Cont')
-            dpsr=getval_encode('DPSRate')
-            dpsm=getval_encode('DPSMode')
+            dps=getval_encode('DynamicPS',"DPS",update)
+            ps=getval_encode('ProgramService',"PS",update)
+            text=getval_encode('RadioText',"TEXT",update)
+            picode=getval_encode('PICode',"PI",update)
+            pty=getval_encode('ProgramType',"PTY",update)
+            ptyn=getval_encode('ProgramTypeName',"PTYN",update)
+            trp=getval_encode('TrafficProgram',"TP",update)
+            tra=getval_encode('TrafficAnnouncement',"TA",update)
+            af1=getval_encode('AltFreq1',"AF1",update)
+            af2=getval_encode('AltFreq2',"AF2",update)
+            af3=getval_encode('AltFreq3',"AF3",update)
+            af4=getval_encode('AltFreq4',"AF4",update)
+            af5=getval_encode('AltFreq5',"AF5",update)
+            af6=getval_encode('AltFreq6',"AF6",update)
+            af7=getval_encode('AltFreq7',"AF7",update)
+            af8=getval_encode('AltFreq8',"AF8",update)
+            af9=getval_encode('AltFreq9',"AF9",update)
+            af10=getval_encode('AltFreq10',"AF10",update)
+            af11=getval_encode('AltFreq11',"AF11",update)
+            af12=getval_encode('AltFreq12',"AF12",update)
+            af13=getval_encode('AltFreq13',"AF13",update)
+            af14=getval_encode('AltFreq14',"AF14",update)
+            af15=getval_encode('AltFreq15',"AF15",update)
+            af16=getval_encode('AltFreq16',"AF16",update)
+            af17=getval_encode('AltFreq17',"AF17",update)
+            af18=getval_encode('AltFreq18',"AF18",update)
+            af19=getval_encode('AltFreq19',"AF19",update)
+            af20=getval_encode('AltFreq20',"AF20",update)
+            af21=getval_encode('AltFreq21',"AF21",update)
+            af22=getval_encode('AltFreq22',"AF22",update)
+            af23=getval_encode('AltFreq23',"AF23",update)
+            af24=getval_encode('AltFreq24',"AF24",update)
+            af25=getval_encode('AltFreq25',"AF25",update)
+            di=getval_encode('DecoderInfo',"DI",update)
+            mus=getval_encode('MusicSpeech',"MS",update)
+            dat=getval_encode('Date',"DATE",update)
+            tim=getval_encode('Time',"DATE",update)
+            utco=getval_encode('UTCOffset',"UTC",update)
+            cont=getval_encode('Cont',"CT",update)
+            dpsr=getval_encode('DPSRate',"DPSR",update)
+            dpsm=getval_encode('DPSMode',"DPSM",update)
 
 
 
