@@ -44,15 +44,15 @@ def getval(val, update, section):
     configval = update.config().get(section,val)
     return configval
 
-def encode(srcdata, fieldname, update, section):
+def encode(srcdata, fieldname, update):
     if(len(srcdata)!=0):
-        enc=fieldname+'='+update.resolvePadFields(update.config().get(section,srcdata),pypad.ESCAPE_NONE)+'\r\n'
+        enc=fieldname+'='+update.resolvePadFields(srcdata),pypad.ESCAPE_NONE)+'\r\n'
     else:
         enc=''
     return enc
 
 def getval_encode(sourcename, fieldname, update, section):
-    return encode(getval(sourcename, update, section), fieldname, update, section)
+    return encode(getval(sourcename, update, section), fieldname, update)
 
 def ProcessPad(update):
     n=1
