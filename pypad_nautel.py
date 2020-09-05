@@ -40,7 +40,7 @@ def sendvar(var):
         send_sock.sendall(var.encode('utf-8'))
         send_sock.close()
 
-def getval(section, val, update, section):
+def getval(val, update, section):
     configval = update.config().get(section,val)
     return configval
 
@@ -51,7 +51,7 @@ def encode(srcdata, fieldname, update, section):
         enc=''
     return enc
 
-def getval_encdode(sourcename, fieldname, update, section):
+def getval_encode(sourcename, fieldname, update, section):
     return encode(getval(sourcename, update, section), fieldname, update, section)
 
 def ProcessPad(update):
