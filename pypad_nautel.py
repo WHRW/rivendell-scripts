@@ -41,7 +41,10 @@ def sendvar(var):
         send_sock.close()
 
 def getval(val, update, section):
-    configval = update.config().get(section,val)
+    try:
+        configval = update.config().get(section,val)
+    except:
+        configval = ''
     return configval
 
 def encode(srcdata, fieldname, update):
