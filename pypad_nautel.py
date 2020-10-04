@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-# CODE IS UNTESTED, IN DEVELOPMENT, DO NOT USE IN PRODUCTION
-
 # pypad_nautel.py
 #
 # Send Now & Next updates to an Nautel FM Transmitter as TCP for RDS
