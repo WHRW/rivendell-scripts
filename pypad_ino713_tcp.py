@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# pypad_ino713_delay_tcp.py
+# pypad_ino713_tcp.py
 #
 # Send Now & Next updates to an Inovonics 713 RDS encoder as TCP
 #
